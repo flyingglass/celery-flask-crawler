@@ -1,0 +1,41 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s | %(levelname)s | %(name)s | %(lineno)s | %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  info_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: simple
+    filename: /var/log/celery-flask-crawler/celery-flask-crawler.info.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 50
+    encoding: utf8
+
+  error_file_handler:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: /var/log/celery-flask-crawler/celery-flask-crawler.error.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 50
+    encoding: utf8
+
+loggers:
+  my-module:
+    level: DEBUG
+#  werkzeug:
+#    level: WARNING
+
+root:
+  level: INFO
+  handlers: [console, info_file_handler, error_file_handler]

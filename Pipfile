@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pypiwin32 = "*"
+mysql-connector-python = "*"
+
+[packages]
+flask-restplus = "*"
+flask-redis = "*"
+flask-sqlalchemy = "*"
+flask-pymongo = "*"
+pymysql = "*"
+pyyaml = "*"
+celery = "*"
+flower = {file = "https://github.com/mher/flower/zipball/master"}
+scrapy = "*"
+gevent = "*"
+gunicorn = "*"
+requests = "*"
+js2xml = "*"
+
+[requires]
+python_version = "3.7"
