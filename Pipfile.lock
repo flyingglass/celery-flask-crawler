@@ -10,8 +10,8 @@
         "sources": [
             {
                 "name": "pypi",
-                "url": "http://coin.flyflyfish.com/nexus/repository/pypi-group/simple/",
-                "verify_ssl": false
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
             }
         ]
     },
